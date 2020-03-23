@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import './styles/poster.css'
 import DataComponent from './DataComponent';
 
-
+//need to re-add the image tag with the data src 
 const Poster = ({data,name,age})=>{
   return(
     <div className="poster-container">
       <div className="poster-inner-container">
           <div className="poster-image">
-            <img src={data}/>
+
           </div>
           <div className="details">
 
@@ -27,7 +27,7 @@ Poster.propTypes ={
   age: PropTypes.number
 }
 Poster.defaultProps ={
-  name:' not avalible' 
+  name:' not avalible'
 }
 const DoggyPoster = DataComponent(Poster); // this is the HOC that will give the poster acces to some state. THis will then be exported instead
 

@@ -83,6 +83,24 @@ object referenced by whatever came before the last "."
 
 - now I will add the propType checks. React has a built-in property type
 
+------------------ADDING ROUTER------------------------------------------
+-instead of creating a new project every time I learn something new. I am going to keep adding to this one.
+Maybe by the end of the week, it will actually be a decent website
+- now I will add a router for the login page
+- the <Route /> component is responsible for rendering some UI when a location matches the route's path.
+- we essentialy set up components and we render them. I can think of those components as pages.
+- there are two routersm the Hash router and the browser router. the browser needs a special server config and the
+hash does not
+- So I wrapped my root element in Browser Router tags and everything disappeared, I think this might be because I
+havent put what I want to render for the home page
+
+- the two routing components are Switch and Route. When a <Switch> is rendered it searches for its children and looks for the
+least specific path to match, this means the <Route>s with longer paths should come before the shorter ones
+- the ROute path renders the begging of the url, not the whole thing. because of this we should use the exact path on
+the home route, just so it doesnt get triggered every time the try to get a url
+-added <Link> components to the <li> tags in order to be able to navigate just by clicking. Whenever we use the link
+component a <a/> tag gets rendered to the html.
+
 
 -----------------------------CONCLUSION AND REVIEW----------------------------------------------------------------------
 BAD THINGS:
@@ -96,4 +114,4 @@ GOODTHINGS:
 - I would like to revisit this project in the future and flush it out some more when I am finished reading the react book that I just bought
 
 OVERALL SCORE:
-60% | major room for improvement but heading in the right direction 
+60% | major room for improvement but heading in the right direction
