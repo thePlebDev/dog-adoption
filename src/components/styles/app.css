@@ -1,0 +1,5 @@
+.kitty-poster-section{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap:1em;
+}
