@@ -101,6 +101,62 @@ the home route, just so it doesnt get triggered every time the try to get a url
 -added <Link> components to the <li> tags in order to be able to navigate just by clicking. Whenever we use the link
 component a <a/> tag gets rendered to the html.
 
+---------------ADDING REDUX---------------------------------------------------------------------
+the main thing that I want is the state from redux. I want to be able to store my info into one source of truth
+- redux makes it so that all the state data is stored in a single object. making us able to use a single source of truth
+
+ACTIONS
+- actions are payloas of information that send data from the application to your store. They are the only source of information
+for the store. actions must have a type property, this will indicate what type of action that is being performed
+- when the application gets larger the actions should have there own file
+- pass as little data as possible
+
+ACTION CREATORS
+- these are functions that create actions. the function returns the action object, They need to be dispatched with the
+dispatch function. you can create a bound action creator that auto dispatches and then just call it directly
+- will most likely be dispatching actions through the connect method
+
+REDUCERS
+-specify how the application's state changes in response to actions sent to the store
+- the state seems to be a literalt object inside a normal component
+- the reducer is a pure function that takes in an action, the previous state and then returns the next state
+
+STORE
+- holds the application state
+- the state is stored in a completely separate thing from the components
+
+
+--------------------------------IMPLEMENTING REDUX---------------------------------------------------
+- I have read too much to not start trying to workout what is going on. first I just created a file called state and
+put what I want my state to look like
+- for the state I created an array for the dogs and an empty array for users
+- next I need to create the store. The store is what holds the application's state data and handles all state updates
+- the store handles the state updates by passing the current state and action through a single reducer
+- for the moment I do not need any actions but I will later
+- import the createStore method from redux. This will help us create the "globalized state"
+- but I will need a reducer to set up the initial store;
+- so the store gets initialized through a single reducer
+- we can split the reducers up into different files but then we still have to combine them with the combineReducers method
+- I created my super basic reducer that when called will create the store of data
+
+-------------------------------PROPERLY IMPLEMENTING REACT AND REDUX-----------------------------------------------------
+-the site react-redux.js.org has official documentation on how to implement Redux and React properly.
+- React Redux is the official library on how to bind the two together
+- installed it
+- then I used the <Provider /> component to make the store available to the rest of your app
+- now I will use the connect() function to connect the desired component to the store
+- map dispatch to props allows our components to fire of action creators
+- map state to props allows the component to subscribe to Redux store updates
+- now I will update DoggyPoster.js to use Redux instead.
+- I am going to delete the DataComponent.js file but first I will hook up the components with the Redux state
+- Now that I think I have used the Connect function property, I am going to use the map function in order to
+render multiple poster components based on the state
+- map() method creates a new array populated with the results of calling a provided function on every element
+- some syntax on the arrrow function is messing me up, so I am going to read up on the arrow function again
+- now I will read up on the export and export default
+- so with default exports, you can only use one per page and when you import them, you can call them anything you like
+- with named exports you can have multiple per page but you need to specifically import them with the {}
+- Technically Redux is up and running, its borderline useless in this state but it is worthy to be pushed because its implemented
 
 -----------------------------CONCLUSION AND REVIEW----------------------------------------------------------------------
 BAD THINGS:

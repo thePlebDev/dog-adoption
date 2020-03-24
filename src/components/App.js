@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './header';
-import DoggyPoster from './Poster';
+import DogPoster from './Poster';
 import Login from './Login';
 import SignUp from './SignUp';
 import './styles/app.css';
@@ -15,12 +15,8 @@ const App = () =>{
       <Switch>
         <Route exact path="/">
             <div className="kitty-poster-section">
-                <DoggyPoster name="bob" age={4} />
-                <DoggyPoster name="rofus" age={7} />
-                <DoggyPoster name="taco" age={2} />
-                <DoggyPoster  name="beans" age={9}/>
-                <DoggyPoster  name="dean" age={10}/>
-                <DoggyPoster name="robo" age={4} />
+                <DogPoster/>
+                <DogPoster/>
             </div>
         </Route>
 
@@ -38,5 +34,7 @@ const App = () =>{
 
   )
 }
+
+
 
 export default App;

@@ -1,25 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './styles/poster.css'
-import DataComponent from './DataComponent';
 
-//need to re-add the image tag with the data src 
-const Poster = ({data,name,age})=>{
-  return(
-    <div className="poster-container">
-      <div className="poster-inner-container">
-          <div className="poster-image">
 
-          </div>
-          <div className="details">
-
-              <div className="poster-name">Name: {name}</div>
-              <div className="poster-age">Age: {age}</div>
-          </div>
-      </div>
-    </div>
-  )
+//need to re-add the image tag with the data src
+const Poster = ({dogs})=>{
+  console.log(dogs)
+  return <div>This is from the Poster</div>
 }
 
 Poster.propTypes ={
@@ -29,6 +18,13 @@ Poster.propTypes ={
 Poster.defaultProps ={
   name:' not avalible'
 }
-const DoggyPoster = DataComponent(Poster); // this is the HOC that will give the poster acces to some state. THis will then be exported instead
+const mapState = (state)=>{
+  const { dogs } = state;
+  return{dogs}
+}
 
-export default DoggyPoster;
+const DogPoster= connect(mapState)(Poster)
+
+export default DogPoster
+
+//how will the state interact with the props
